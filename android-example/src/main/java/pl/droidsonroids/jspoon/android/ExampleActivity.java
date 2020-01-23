@@ -8,6 +8,7 @@ import java.util.List;
 import pl.droidsonroids.jspoon.HtmlAdapter;
 import pl.droidsonroids.jspoon.Jspoon;
 import pl.droidsonroids.jspoon.annotation.Selector;
+import pl.droidsonroids.jspoon.example.java.AcMilanExample;
 
 public class ExampleActivity extends AppCompatActivity {
     private final static String HTML_EXAMPLE_STRING = "<div id='animals'><ul>"
@@ -45,5 +46,12 @@ public class ExampleActivity extends AppCompatActivity {
             textView.setText(mammal);
             linearLayout.addView(textView);
         }
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                AcMilanExample.getAcMilanPage();
+            }
+        }).start();
     }
 }

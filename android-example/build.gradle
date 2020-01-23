@@ -19,6 +19,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
 }
 
 repositories {
@@ -30,4 +34,5 @@ dependencies {
 
     implementation "com.android.support:appcompat-v7:$versions.support"
     implementation "com.android.support.constraint:constraint-layout:$versions.constraint"
+    implementation project(path: ':advanced-example')
 }
